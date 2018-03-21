@@ -1,7 +1,8 @@
 import React from "react";
+import "./Card.css";
 
 export const Card = props => (
-  <li className="list-group-item">
+  <div className={["c".concat(props.value), "card"].join(" ")}>
     {props.children}
-  </li>
+  </div>
 );

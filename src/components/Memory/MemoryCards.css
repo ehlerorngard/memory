@@ -1,0 +1,19 @@
+.jumbotron {
+  height: 180;
+  clear: "both";
+  padding: 10px 10px;
+}
+
+.jumbotron > div > div > h1 {
+
+  font-size: 60px;
+  color: hsla(194, 0%, 24%, 1);
+  font-family: "Monoton", sans;
+}
+
+.lead {
+  font-size: 26px;
+  padding-top: 30px;
+  font-family: "Gruppo", sans;
+}
+
