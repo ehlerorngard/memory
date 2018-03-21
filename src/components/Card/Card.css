@@ -1,46 +1,50 @@
 .card {
-	width: 200px;
-	height: 200px;
+	width: 160px;
+	height: 160px;
 	margin: 20px;
 	padding: 20px;
 	box-shadow: 0 0 10px 4px lightgray;
 	border: solid white 8px;
 	border-radius: 4px;
+	display: inline-block;
+}
+.card:hover {
+	transform: scale(1.04);
 }
 
 .c13 {
-	background-color: red;
+	background-color: hsla(356, 82%, 90%, 1);
 }
 .c14 {
-	background-color: 
+	background-color: hsla(54, 100%, 86%, 1);
 }
 .c15 {
-	background-color: 
+	background-color: hsla(348, 82%, 84%, 1);
 }
 .c16 {
-	background-color: 
+	background-color: hsla(41, 82%, 80%, 1);
 }
 .c17 {
-	background-color: 
+	background-color: hsla(8, 87%, 74%, 1);
 }
 .c18 {
-	background-color: 
+	background-color: hsla(65, 82%, 80%, 1);
 }
 .c19 {
-	background-color: 
+	background-color: hsla(28, 100%, 70%, 1);
 }
 .c20 {
-	background-color: 
+	background-color: hsla(28, 97%, 77%, 1);
 }
 .c21 {
-	background-color: 
+	background-color: hsla(6, 84%, 79%, 1);
 }
 .c22 {
-	background-color: 
+	background-color: hsla(52, 87%, 70%, 1);
 }
 .c23 {
-	background-color: 
+	background-color: hsla(50, 93%, 87%, 1);
 }
 .c24 {
-	background-color: 
+	background-color: hsla(18, 82%, 82%, 1);
 }

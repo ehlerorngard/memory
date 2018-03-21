@@ -1,7 +1,7 @@
 import React from "react";
 import "./Nav.css";
 
-const Nav = () => (
+const Nav = (props) => (
   <nav className="navbar p-4">
     <div className="container-fluid">
         <div className="ontheleft">
@@ -9,11 +9,11 @@ const Nav = () => (
             Memory
           </a>
         </div>
-        <div className="inthemiddle">status updater goes here</div>
+        <div className="inthemiddle">{props.message}</div>
         <div className="ontheright">
-          <div>total points: HERE</div>
+          <div>total points: {props.points}</div>
           <div>|</div>
-          <div>top score: HERE</div>
+          <div>top score: {props.topScore}</div>
         </div>
       </div>
 

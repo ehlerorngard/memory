@@ -1,31 +1,38 @@
 .navbar {
 	background-color: hsla(194, 53%, 67%, 1);
+	position: fixed;
+	display: block;
+	z-index: 3;
+	width: 100%;
+	margin: 20px 0;
 }
 a {
 	color: white;
 	text-decoration: none;
-	font-size: 24px;
+	font-size: 28px;
 	font-family: "Gruppo", sans;
 }
 a:hover {
 	cursor: pointer;
+	color: navy;
+	text-decoration: none;
 }
 .ontheleft {
-	width: 25%;
+	width: 20%;
 	height: 100%;
 	display: inline-block;
 }
 
 .inthemiddle {
-	width: 30%;
+	width: 40%;
 	height: 100%;
-	font-size: 20px;
+	font-size: 22px;
 	display: inline-block;
 }
 .ontheright {
-	width: 45%;
+	width: 40%;
 	height: 100%;
-	font-size: 20px;
+	font-size: 24px;
 	display: inline-block;
 }
 .ontheright > div {
