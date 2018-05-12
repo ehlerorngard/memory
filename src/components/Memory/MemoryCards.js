@@ -31,55 +31,62 @@ class MemoryCards extends Component {
     console.log("component did mount");
   }
 
+//=====================================================
+//======== this randomly scrambles the cards ==========
+//=====================================================
   loadCards = () => {
-    console.log("cards LOADED");
 
     const scrambledarray = this.state.cards2.map(obj => {return obj});
 
-    console.log("before starting, scrambledarray: ", scrambledarray);
-
-
     scrambledarray.sort(function(a, b){return 0.5 - Math.random()});
-    console.log("scrambledarray NOW: ", scrambledarray);
 
-  //   for (let i = 0; i < oldarray.length; i++) {
-  //     console.log("old array length: ", oldarray.length);
-  //     console.log("old array: ", oldarray);
 
-  //     let randex = Math.floor(Math.random() * oldarray.length);
-  //     console.log("randindex ", randex);
-  //     let next = oldarray.splice(randex, 1);
-  //     console.log("ØØØ___ØØØ objects remaining in oldarray: ", oldarray.length);
-  //     console.log("next: ", next[0]);
-  //     console.log("the scrambledarray BEFORE: ", scrambledarray);      
-  //     scrambledarray.push(next[0]);
-  //     console.log("the scrambledarray: ", scrambledarray);
-  //     console.log("state 0 ", this.state.cards2[0]);
-  //     console.log("STATE: ", this.state.cards2);
-  //   }
+
+//========================================
+//======= ASK: why did this not work?? ===
+//========================================
+    // for (let i = 0; i < oldarray.length; i++) {
+    //   console.log("old array length: ", oldarray.length);
+    //   console.log("old array: ", oldarray);
+
+    //   let randex = Math.floor(Math.random() * oldarray.length);
+    //   console.log("randindex ", randex);
+    //   let next = oldarray.splice(randex, 1);
+    //   console.log("ØØØ__ # of objects remaining in oldarray: ", oldarray.length);
+    //   console.log("next: ", next[0]);
+    //   console.log("the scrambledarray BEFORE: ", scrambledarray);      
+    //   scrambledarray.push(next[0]);
+    //   console.log("the scrambledarray AFTER: ", scrambledarray);
+    //   console.log("state 0 ", this.state.cards2[0]);
+    //   console.log("STATE: ", this.state.cards2);
+    // }
 
     setTimeout(this.setState({ cards2: scrambledarray }), 1);
   };
 
+// ====================================================
+//======= this updates the high score if nec. ===========
+// ====================================================
   updateTopScore = (score, cb) => {
     this.setState({ topScore: score });
     this.setState({ points: 0 });
     cb();
   };
 
+// ====================================================
+//======= this sets all "clicked" values to false ======
+// ====================================================
   unclickAll = event => {
-    console.log("is this WORKING????");
+
     const barray = this.state.cards2.map(obj => {
       let obj2 = {};
       obj2.id = obj.id;
       obj2.clicked = false;
-      console.log("obj2: ", obj2);
+
       return obj2;
     });
-    console.log("BARRAY: ", barray);
-    this.setState({ cards2: barray }, () => {
-      console.log("UNCLICKED?????", this.state.cards2);
-    });
+
+    this.setState({ cards2: barray });
 
     // for (let i = 0; i < this.state.cards2.length; i++) {
     //   console.log("card i ", this.state.cards2[i]);
@@ -89,26 +96,23 @@ class MemoryCards extends Component {
     //       }, () => {console.log("newSTATE: ", this.state.cards2)});
     //   }
     // }
+
   }
 
+// ====================================================
+//======= main logic to process a click ================
+// ====================================================
   registerClick = (ident) => {
 
     const index = this.state.cards2.findIndex(x => x.id===ident);
-    console.log("the clicked card's index: ", index);
-    console.log("this.cards2[index] __ ", this.state.cards2[index]);
-    console.log("this.cards2[index].clicked __ ", this.state.cards2[index].clicked);
     
     if (this.state.cards2[index].clicked !== true) {
       this.setState({ message: "Nice work!" });
-      this.setState((state) => ({ points: state.points + 1 }), function() {
-        console.log("new points total: ", this.state.points)
-      }); 
-      console.log("the OBJECT____|||| of that index: ", this.state.cards2[index]);
+      this.setState((state) => ({ points: state.points + 1 })); 
 
       this.setState(
         {cards2: update(this.state.cards2, {[index]: {clicked: {$set: true}}})
         }, () => {
-          console.log("^^^^^^^^^ state: ", this.state);
           this.loadCards();
 
         });
@@ -118,7 +122,6 @@ class MemoryCards extends Component {
       if (this.state.points > this.state.topScore) {
         this.updateTopScore(this.state.points, () => {
             this.unclickAll();
-            console.log("all clicked should be false now .... \nstate: ", this.state);
           });
         this.loadCards(); 
 
@@ -137,6 +140,9 @@ class MemoryCards extends Component {
     console.log("state updated!");
   }
 
+// ====================================================
+//======= render everything to the client view =========
+// ====================================================
   render() {
     return (
       <div>
