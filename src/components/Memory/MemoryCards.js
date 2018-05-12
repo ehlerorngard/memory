@@ -45,21 +45,21 @@ class MemoryCards extends Component {
 //========================================
 //======= ASK: why did this not work?? ===
 //========================================
-  //   for (let i = 0; i < oldarray.length; i++) {
-  //     console.log("old array length: ", oldarray.length);
-  //     console.log("old array: ", oldarray);
+    // for (let i = 0; i < oldarray.length; i++) {
+    //   console.log("old array length: ", oldarray.length);
+    //   console.log("old array: ", oldarray);
 
-  //     let randex = Math.floor(Math.random() * oldarray.length);
-  //     console.log("randindex ", randex);
-  //     let next = oldarray.splice(randex, 1);
-  //     console.log("ØØØ___ØØØ objects remaining in oldarray: ", oldarray.length);
-  //     console.log("next: ", next[0]);
-  //     console.log("the scrambledarray BEFORE: ", scrambledarray);      
-  //     scrambledarray.push(next[0]);
-  //     console.log("the scrambledarray: ", scrambledarray);
-  //     console.log("state 0 ", this.state.cards2[0]);
-  //     console.log("STATE: ", this.state.cards2);
-  //   }
+    //   let randex = Math.floor(Math.random() * oldarray.length);
+    //   console.log("randindex ", randex);
+    //   let next = oldarray.splice(randex, 1);
+    //   console.log("ØØØ__ # of objects remaining in oldarray: ", oldarray.length);
+    //   console.log("next: ", next[0]);
+    //   console.log("the scrambledarray BEFORE: ", scrambledarray);      
+    //   scrambledarray.push(next[0]);
+    //   console.log("the scrambledarray AFTER: ", scrambledarray);
+    //   console.log("state 0 ", this.state.cards2[0]);
+    //   console.log("STATE: ", this.state.cards2);
+    // }
 
     setTimeout(this.setState({ cards2: scrambledarray }), 1);
   };
@@ -96,6 +96,7 @@ class MemoryCards extends Component {
     //       }, () => {console.log("newSTATE: ", this.state.cards2)});
     //   }
     // }
+
   }
 
 // ====================================================
