@@ -43,7 +43,7 @@ class MemoryCards extends Component {
 
 
 //========================================
-//======= ASK: why did this not work?? ===
+//======= this didn't work: ==============
 //========================================
     // for (let i = 0; i < oldarray.length; i++) {
     //   console.log("old array length: ", oldarray.length);
@@ -87,15 +87,6 @@ class MemoryCards extends Component {
     });
 
     this.setState({ cards2: barray });
-
-    // for (let i = 0; i < this.state.cards2.length; i++) {
-    //   console.log("card i ", this.state.cards2[i]);
-    //   if (this.state.cards2[i].clicked) {
-    //     this.setState(
-    //       {cards2: update(this.state.cards2, {[i]: {clicked: {$set: false}}})
-    //       }, () => {console.log("newSTATE: ", this.state.cards2)});
-    //   }
-    // }
 
   }
 
