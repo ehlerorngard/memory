@@ -40,27 +40,6 @@ class MemoryCards extends Component {
 
     scrambledarray.sort(function(a, b){return 0.5 - Math.random()});
 
-
-
-//========================================
-//======= this didn't work: ==============
-//========================================
-    // for (let i = 0; i < oldarray.length; i++) {
-    //   console.log("old array length: ", oldarray.length);
-    //   console.log("old array: ", oldarray);
-
-    //   let randex = Math.floor(Math.random() * oldarray.length);
-    //   console.log("randindex ", randex);
-    //   let next = oldarray.splice(randex, 1);
-    //   console.log("ØØØ__ # of objects remaining in oldarray: ", oldarray.length);
-    //   console.log("next: ", next[0]);
-    //   console.log("the scrambledarray BEFORE: ", scrambledarray);      
-    //   scrambledarray.push(next[0]);
-    //   console.log("the scrambledarray AFTER: ", scrambledarray);
-    //   console.log("state 0 ", this.state.cards2[0]);
-    //   console.log("STATE: ", this.state.cards2);
-    // }
-
     setTimeout(this.setState({ cards2: scrambledarray }), 1);
   };
 
@@ -124,7 +103,6 @@ class MemoryCards extends Component {
         this.loadCards();
       }
     }
-
   };
 
   componentDidUpdate() {
